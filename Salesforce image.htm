@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <!-- v16116 -->
+
+  <title>Integrating with Salesforce CRM &ndash; Instapage Help Center</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="dkWbnNWJ8Q+tpYztAJ8vOKbHCMqeACsAy7jVryd4/hgcCvPifoSJ/A+U9/94V82u4DGARRjTSXG8FhGG74qUUA==" />
+  <meta name="description" content="For the integration to work you will need the API key from Salesforce CRM that can be accessed only by Salesforce Enterprise users or..." /><meta property="og:image" content="https://theme.zdassets.com/theme_assets/212657/87ae4ed84759b15d4c16a4290481f0e4b4f25c42.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Instapage Help Center" />
+<meta property="og:title" content="Integrating with Salesforce CRM" />
+<meta property="og:description" content="For the integration to work you will need the API key from Salesforce CRM that can be accessed only by Salesforce Enterprise users or above.
+ 
+If you're in the editor, exit the builder to go to the..." />
+<meta property="og:url" content="http://help.instapage.com/hc/en-us/articles/360001739267-Integrating-with-Salesforce-CRM" />
+<link rel="canonical" href="https://help.instapage.com/hc/en-us/articles/360001739267-Integrating-with-Salesforce-CRM" />
+<link rel="alternate" hreflang="en" href="https://help.instapage.com/hc/en-us/articles/360001739267-Integrating-with-Salesforce-CRM" />
+
+  <!-- Entypo pictograms by Daniel Bruce — www.entypo.com -->
+  <link rel="stylesheet" media="all" href="//static.zdassets.com/hc/assets/application-68829bd9872b721cf115e7eb5f1b8ad0.css" id="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="//p23.zdassets.com/hc/theming_assets/212657/2021076/style.css?digest=360232250891" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="//theme.zdassets.com/theme_assets/212657/50dfc25560a8504c618e0fbf3a5774f2922d84e5.ico" />
+
+  <!--[if lt IE 9]>
+  <script>
+    //Enable HTML5 elements for <IE9
+    'abbr article aside audio bdi canvas data datalist details dialog \
+    figcaption figure footer header hgroup main mark meter nav output \
+    progress section summary template time video'.replace(/\w+/g,function(n){document.createElement(n)});
+  </script>
+<![endif]-->
+
+  <script src="//static.zdassets.com/hc/assets/jquery-c679166c1baf738bb62b9918a7a13fd4.js"></script>
+  
+  
+  
+
+  <meta property="og:image" content="//theme.zdassets.com/theme_assets/212657/5a7ece66bcf5053ba1a47b3cb1990b5588a43a20.jpg" />
+<meta name="msvalidate.01" content="1B9703F8FE27C9F6E4D56F4205521929" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="//p23.zdassets.com/hc/theme_assets/212657/200091267/style_purged_rem.css?locale=en-us" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
+<link rel="stylesheet" href="//theme.zdassets.com/theme_assets/212657/f8e47e1e78969181bb162e0d66df2371d0b23bb5.css" />
+
+<script src="//theme.zdassets.com/theme_assets/212657/23b755ad8c29aecb8bb19c7a725edf1831700f4c.js"></script>  
+  
+<script src="//theme.zdassets.com/theme_assets/212657/491907d0dd6a9cc2726a5df9851ac953c557ef59.js"></script>
+
+  <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"XrtAl1ak0EY1mh", domain:"instapage.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=XrtAl1ak0EY1mh" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVZ9');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript">(function(o){var b="https://api.autopilothq.com/anywhere/",t="53f1a73d70fc4a28a085ef0513444ec428319577f7d644a9aec98f606f5b12ad",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
+  <script type="text/javascript" src="//p23.zdassets.com/hc/theming_assets/212657/2021076/script.js?digest=360232250891"></script>
+</head>
+<body class="community-enabled">
+  
+  
+
+
+  
+
+
+  <nav class="nav-section">  
+    <div class="logo">
+      <a href="/hc/en-us">
+        <img class="svg" src="//theme.zdassets.com/theme_assets/212657/26fa06282dbf6638b4473dffbc2fd39a12a4472e.svg" />
+      </a>
+    </div><!-- logo end -->
+    <div class="main-menu">
+    		<ul>          
+          <li><a href="/hc/en-us/requests/new">Submit a Request</a></li> 
+          <li><a href="/hc/communities/public/topics">Community</a></li>
+          <li><a href="/hc/en-us">Help Center</a></li>
+      	</ul>
+    </div> <!-- end main-menu  -->
+  	<ul class="login">
+      <li class="button-login"><i>Welcome, </i>   <a class="login" data-auth-action="signin" role="button" href="/hc/en-us/signin?return_to=https%3A%2F%2Fhelp.instapage.com%2Fhc%2Fen-us%2Farticles%2F360001739267-Integrating-with-Salesforce-CRM&amp;locale=en-us">Sign in</a>
+</li>
+    </ul>
+  </nav>
+    <div class="clearfix"></div>
+    
+<header class="header">  
+  <div class="header-inner">
+    <div class="clearfix"></div>
+    <h2>Welcome to the Instapage Support Center</h2>    
+    <div class="clearfix"></div>
+    <div class="searhbar-header"><span class="blinking-cursor">|</span><form role="search" class="search" data-search="" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><input type="search" name="query" id="query" placeholder="Search" aria-label="Search" />
+<input type="submit" name="commit" value="Search" /></form></div>        
+  </div>
+</header>
+
+  <main role="main">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVZ9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="HCarticleContainer">
+<div class="container stickem-container">
+<nav class="sub-nav clearfix">
+  <ol class="breadcrumbs">
+  
+    <li title="Instapage Help Center">
+      
+        <a href="/hc/en-us">Instapage Help Center</a>
+      
+    </li>
+  
+    <li title="Integrations">
+      
+        <a href="/hc/en-us/categories/200288797-Integrations">Integrations</a>
+      
+    </li>
+  
+    <li title="Direct Integrations">
+      
+        <a href="/hc/en-us/sections/200842108-Direct-Integrations">Direct Integrations</a>
+      
+    </li>
+  
+</ol>
+
+</nav>
+
+<div class="clearfix"></div>
+  <header class="article-header clearfix">
+      <h1 class="articleTitle"> Integrating with Salesforce CRM</h1>
+  </header>
+  <article class="main-column">
+    <div class="subtle-wrap">
+      <div class="article-body markdown">
+        <p class="wysiwyg-text-align-center"><img class="irc_mi" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/83/Salesforce_logo.svg/1200px-Salesforce_logo.svg.png" alt="Image result for salesforce" width="486" height="341" /></p>
+<p class="wysiwyg-text-align-left">For the integration to work you will need the API key from Salesforce CRM that can be accessed only by Salesforce Enterprise users or above.</p>
+<p class="wysiwyg-text-align-left"> </p>
+<p class="wysiwyg-text-align-left">If you're in the editor, exit the builder to go to the Experience Manager interface:</p>
+<p class="wysiwyg-text-align-left"><img src="/hc/article_attachments/360027998672/save_publish_etc.png" alt="save_publish_etc.png" /></p>
+<p class="wysiwyg-text-align-left">Go to the Integrations tab of the Experience Manager and select <strong>Form Integrations:</strong></p>
+<p class="wysiwyg-text-align-left"><strong><img src="/hc/article_attachments/360026415812/integrations2_copy.png" alt="integrations2_copy.png" /></strong></p>
+<p class="wysiwyg-text-align-left">If you have already connected your Salesforce account to Instapage, you will see it here and you can select it. Otherwise, you will see this screen and you can go to the main Integrations Dashboard to connect.</p>
+<p class="wysiwyg-text-align-left"><img src="/hc/article_attachments/360026406391/integrations3.png" alt="integrations3.png" /></p>
+<p class="wysiwyg-text-align-left">If you go to the main Integrations dashboard to connect, look for Salesforce in the page integrations list.</p>
+<p class="wysiwyg-text-align-left"><img src="/hc/article_attachments/360026406591/integrations4_copy.png" alt="integrations4_copy.png" /></p>
+<p class="wysiwyg-text-align-left">Sign in and connect the account. This step is done once per sub-account. When you have connected the account, come back to the Experience Manager for the page you want to integrate with Salesforce and continue with the steps below.</p>
+<p class="wysiwyg-text-align-left"><strong>NOTE: </strong>Only <strong>one </strong>account can be connected at a time, even if you have the option of adding more accounts to the list. </p>
+<p class="wysiwyg-text-align-left"><img src="/hc/article_attachments/360027028431/sfdc10_copy.png" alt="sfdc10_copy.png" /></p>
+<p class="wysiwyg-text-align-left"><span style="font-weight: 400;">On the next step, you can choose the campaign you want to use;</span></p>
+<p class="wysiwyg-text-align-left"><span style="font-weight: 400;"><img src="/hc/article_attachments/360010927412/foaya_-_Instapage_2018-04-27_12-54-06__1_.png" alt="foaya_-_Instapage_2018-04-27_12-54-06__1_.png" /></span></p>
+<p class="wysiwyg-text-align-left"><span style="font-weight: 400;">Then you need to map your Instapage fields to the Salesforce fields and click Continue;</span></p>
+<p class="wysiwyg-text-align-left"><img src="/hc/article_attachments/360010927472/foaya_-_Instapage_2018-04-27_12-54-36__1_.png" alt="foaya_-_Instapage_2018-04-27_12-54-36__1_.png" /></p>
+<p>The Salesforce <strong>Last Name</strong> and <strong>Company</strong> fields have a special status. If you have multiple forms on your page and you do not use them inside any of your fields, the integration will work. However, if you use them on one form and not on the second form, the integration will not work on the second form because they become required. <br />So the two fields are not required if they are not used on the page at all but if they are used on one of the forms in your page then they become required for all forms. </p>
+<p>If you map a field with the <strong>[None] </strong>option, the submitted data will not be sent to <em>Salesforce</em>.</p>
+<p>The <strong>Auto Generate</strong> option will create a text field inside your integration.</p>
+<p>If you map an Instapage field with a field from your CRM side that has predefined options/values, then the field from Instapage side must have those exact same predefined options/values, and it is recommended for the fields from both sides to be of the same type.</p>
+<p class="wysiwyg-text-align-left"><span style="font-weight: 400;">And that’s it. If you went through all the steps, you should see this confirmation message. Click on Finish, then save and update your page.</span></p>
+<p class="wysiwyg-text-align-left"><img src="/hc/article_attachments/360010927512/foaya_-_Instapage_2018-04-27_12-55-58__1_.png" alt="foaya_-_Instapage_2018-04-27_12-55-58__1_.png" /></p>
+<div class="support-box">
+<p><strong>Important Notes:</strong></p>
+<p>- The integration only works on the live URL. It can not be tested on the preview mode. When testing on the live URL, make sure that your browser is not displaying an older cached version.</p>
+<p>- Make sure to test the integration with different addresses because if you submit the form multiple times with the same email address the integration will flag the email as spam.</p>
+<p>- Always test your integration with real email addresses as some systems recognize fake emails.  </p>
+</div>
+      </div>
+
+      <div class="article-attachments">
+        <ul class="attachments">
+          
+        </ul>
+      </div>
+      <div class="article-more-questions">
+        Have more questions? <a href="/hc/en-us/requests/new">Submit a request</a>
+      </div>
+    </div>
+ <footer class="article-footer vote-section clearfix">
+        
+          <div class="article-vote">
+            <span class="article-vote-question">Was this article helpful?</span>
+            <div class="article-vote-controls">
+              <a role="button" rel="nofollow" class="article-vote-up" title="Yes" aria-selected="false" data-helper="vote" data-item="article" data-type="up" data-id="360001739267" data-upvote-count="1" data-vote-count="4" data-vote-sum="-2" data-vote-url="/hc/en-us/articles/360001739267/vote" data-value="null" data-label="1 out of 4 found this helpful" data-selected-class="article-voted" href="#"></a>
+              <a role="button" rel="nofollow" class="article-vote-down" title="No" aria-selected="false" data-helper="vote" data-item="article" data-type="down" data-id="360001739267" data-upvote-count="1" data-vote-count="4" data-vote-sum="-2" data-vote-url="/hc/en-us/articles/360001739267/vote" data-value="null" data-label="1 out of 4 found this helpful" data-selected-class="article-voted" href="#"></a>
+            </div>
+            <small class="article-vote-count">
+              <span class="article-vote-label" data-helper="vote" data-item="article" data-type="label" data-id="360001739267" data-upvote-count="1" data-vote-count="4" data-vote-sum="-2" data-vote-url="/hc/en-us/articles/360001739267/vote" data-value="null" data-label="1 out of 4 found this helpful">1 out of 4 found this helpful</span>
+            </small>
+          </div>
+        
+    </footer>
+  </article>
+	<div id="sidebar">
+    <aside class="article-sidebar stickem side-column">
+      <div data-recent-articles></div>
+      
+  <section class="related-articles">
+    <h3>Related articles</h3>
+    <ul>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCDxYxtFTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCAOaxtFTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI%2BL2hjL2VuLXVzL2FydGljbGVzLzM2MDAwMTcyMjQyOC1JbnRlZ3JhdGluZy13aXRoLVdlYmhvb2tzBjsIVDoJcmFua2kG--19e0bd8e3888b9cc995cf649994f2e827e19c25f" rel="nofollow">Integrating with Webhooks</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGkEaIA7DDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCAOaxtFTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJGL2hjL2VuLXVzL2FydGljbGVzLzIwNTIyNjA4OC1QdWJsaXNoaW5nLW9uLWEtQ3VzdG9tLURvbWFpbi1DTkFNRS0GOwhUOglyYW5raQc%3D--0e1175536a6859e4770907bdfed94ffcc29fbf4b" rel="nofollow">Publishing on a Custom Domain (CNAME)</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCGCaY9JTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCAOaxtFTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJAL2hjL2VuLXVzL2FydGljbGVzLzM2MDAxMjAyODUxMi1JbnRlZ3JhdGluZy13aXRoLW90aGVyLUNSTXMGOwhUOglyYW5raQg%3D--0a0d97d288456c7a9cc812d9a6204f77c80c3db0" rel="nofollow">Integrating with other CRMs</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCAtQx9FTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCAOaxtFTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJAL2hjL2VuLXVzL2FydGljbGVzLzM2MDAwMTc4NTg2Ny1Ib3ctZG8tSS11c2UtaGlkZGVuLWZpZWxkcy0GOwhUOglyYW5raQk%3D--ad104fba9d839a5de9310d63133c82e0b2854fe2" rel="nofollow">How do I use hidden fields?</a>
+        </li>
+      
+        <li>
+          <a href="/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCMOYxtFTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCAOaxtFTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI%2FL2hjL2VuLXVzL2FydGljbGVzLzM2MDAwMTczODk0Ny1JbnRlZ3JhdGluZy13aXRoLU1haWxDaGltcAY7CFQ6CXJhbmtpCg%3D%3D--b21c998c1947260d77d612bd186367ccdd238422" rel="nofollow">Integrating with MailChimp</a>
+        </li>
+      
+    </ul>
+  </section>
+
+
+      <section class="recent-articles"><h3><span>Upgrade</span> your account</h3>
+        <p>Check our pricing and select the plan that best fits you.</p>
+        <a href="https://app.instapage.com/upgrade" target="_blank" class="sidebar-button" >Upgrade</a>      
+      </section>
+    </aside>
+	</div><!-- end sidebar -->
+</div>
+</div> <!-- end container -->
+</div> <!-- end container -->
+  </main>
+
+  <!-- preFooter start -->
+<section class="clearfix preFooterSection">
+	<div class="container">
+  	<h3 class="Sectiontitle">Need Further Help?</h3>
+    <h5>Tell us what you need and we will be happy to assist you.</h5>
+    <div class="clearfix"></div>
+    <div class="contactBox boxone">
+      <div class="insideBox">
+      <figure>
+    		<img class="svg" src="//theme.zdassets.com/theme_assets/212657/f322b781c10df5d05615d745f60e1a12382729de.svg" />
+      </figure>
+       <a href="/hc/communities/public/questions">Ask Our<br/>Community</a>
+    	</div> 
+     </div> 
+    <div class="contactBox boxtwo">
+      <div class="insideBox">
+      <figure>
+    <img class="svg" src="//theme.zdassets.com/theme_assets/212657/b86427469c2442e7a388ba20a91e130a5cf395ee.svg" />
+        </figure>
+      <a href="https://help.instapage.com/hc/en-us/requests/new">Create a Ticket</a>
+        </div> 
+    </div>     
+    <div class="contactBox boxthree">
+      <div class="insideBox">
+      <figure>
+    <img class="svg" src="//theme.zdassets.com/theme_assets/212657/bbb3d1844f15f592c282a1ac311889698ae1c763.svg" />
+        </figure>
+      <a href="https://help.instapage.com/hc/en-us/articles/212498057-Live-Chat">Live Chat<br/>Support</a>
+      </div> 
+</div> 
+    
+  <div class="clearfix"></div>
+  </div> 
+</section>
+<!-- preFooter end  -->
+<section class="clearfix FooterSection">
+	<div class="container">
+  	<div class="halfBox">
+    	<p>Our team of expert support staff and our community can answer your questions. Submit a ticket, or reach out on live chat!</p>
+      <div class="clearfix"></div>
+      <nav class="footerMenu">
+        <a href="https://help.instapage.com/hc/">Help Center</a>
+        <a href="/hc/communities/public/topics">Community</a>
+        <a href="https://help.instapage.com/hc/requests/new">Submit a request</a>
+      </nav>
+    </div>
+    <div class="halfBox">    	
+      <div class="clearfix"></div>
+      <ul class="fa-ul">
+        <li><a href="https://www.linkedin.com/company/2746760?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A2746760%2Cidx%3A2-1-2%2CtarId%3A1440113786171%2Ctas%3Ainstapage" target=_blank> <i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://www.facebook.com/Instapageapp" target=_blank><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/Instapage" target=_blank>  <i class="fa fa-twitter"></i></a></li>        
+        <li><a href="https://www.youtube.com/user/InstaPage" target=_blank> <i class="fa fa-youtube"></i></a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <h6 class="copyright">&copy; 2018 Instapage Inc. All Rights Reserved.</h6>
+  </div> <!-- end container -->  
+</section>
+
+
+  <!-- / -->
+
+  <script type="text/javascript" src="//static.zdassets.com/hc/assets/locales/en-us-a5503df53549041d0c344c39572f0906.js"></script>
+  <script src="https://insta.zendesk.com/auth/v2/host.js" data-brand-id="2021076" data-return-to="https://help.instapage.com/hc/en-us/articles/360001739267-Integrating-with-Salesforce-CRM" data-theme="hc" data-locale="en-us" data-auth-origin="2021076,true,true"></script>
+  <script type="text/javascript" src="https://p23.zdassets.com/assets/zendesk_pci_hc.v4.js"></script>
+
+  <script type="text/javascript">
+  /*
+
+    Greetings sourcecode lurker!
+
+    This is for internal Zendesk and legacy usage,
+    we don't support or guarantee any of these values
+    so please don't build stuff on top of them.
+
+  */
+
+  HelpCenter = {};
+  HelpCenter.account = {"subdomain":"insta","environment":"production","name":"Instapage"};
+  HelpCenter.user = {"identifier":"da39a3ee5e6b4b0d3255bfef95601890afd80709","email":null,"name":null,"role":"anonymous","avatar_url":"https://assets.zendesk.com/hc/assets/default_avatar.png","is_admin":false,"organizations":[],"groups":[]};
+  HelpCenter.internal = {"asset_url":"//static.zdassets.com/hc/assets/","web_widget_asset_composer_url":"https://static.zdassets.com/ekr/snippet.js","current_session":{"locale":"en-us","csrf_token":"Y+y2jCBbwwi2h0qXjrZKeolgvyVJtzh2LWydoskoi3QJo97yi1a7+xS2MYX2fqjsz5Y3qs9kWgdawlmLAdrhPA==","shared_csrf_token":null},"settings":{"zopim_enabled":true,"spam_filter_enabled":true},"current_record_id":"360001739267","current_record_url":"/hc/en-us/articles/360001739267-Integrating-with-Salesforce-CRM","current_record_title":"Integrating with Salesforce CRM","search_results_count":null,"current_text_direction":"ltr","current_brand_url":"https://insta.zendesk.com","current_host_mapping":"help.instapage.com","current_path":"/hc/en-us/articles/360001739267-Integrating-with-Salesforce-CRM","authentication_domain":"https://insta.zendesk.com","show_autocomplete_breadcrumbs":true,"rollbar_config":{"enabled":true,"endpoint":"https://rollbar-us.zendesk.com/api/1/item/","accessToken":"731a5a953e9a4b7ab6cac9623f50c732","captureUncaught":true,"captureUnhandledRejections":true,"payload":{"environment":"production","client":{"javascript":{"source_map_enabled":true,"code_version":"c574d21181f2e958b548ff99996e3f2b394be0ff","guess_uncaught_frames":true}}}},"user_info_changing_enabled":false,"has_user_profiles_enabled":false,"user_aliases_enabled":false,"has_anonymous_kb_voting":true,"has_professional_upsell":false,"has_multi_language_help_center":true,"mobile_device":false,"mobile_site_enabled":false,"show_at_mentions":false,"has_copied_content":false,"embeddables_config":{"embeddables_web_widget":false,"embeddables_connect_ipms":false},"base_domain":"zendesk.com","answer_bot_subdomain":"static","plans_url":"https://help.instapage.com/hc/admin/plan?locale=en-us","manage_content_url":"https://help.instapage.com/hc/en-us","arrange_content_url":"https://help.instapage.com/hc/admin/arrange_contents?locale=en-us","general_settings_url":"https://help.instapage.com/hc/admin/general_settings?locale=en-us","user_segments_url":"https://insta.zendesk.com/knowledge/user_segments?brand_id=2021076","has_community_enabled":true,"has_internal_sections":true,"has_answer_bot_web_form_enabled":false,"billing_url":"/access/return_to?return_to=https://insta.zendesk.com/agent/admin/subscription","has_answer_bot":true,"has_block_answer_bot_embeddable":false,"answer_bot_management_url":"https://help.instapage.com/hc/admin/answer_bot?locale=en-us","is_account_owner":false,"theming_center_url":"https://help.instapage.com/theming","theming_cookie_key":"hc-da39a3ee5e6b4b0d3255bfef95601890afd80709-preview","is_preview":false,"has_guide_user_segments_search":true,"has_alternate_templates":false,"arrange_articles_url":"https://insta.zendesk.com/knowledge/arrange?brand_id=2021076","article_verification_url":"https://insta.zendesk.com/knowledge/verification?brand_id=2021076","has_article_verification":false,"guide_language_settings_url":"https://help.instapage.com/hc/admin/language_settings?locale=en-us","has_fetch_authenticity_token":true,"docs_importer_url":"https://insta.zendesk.com/knowledge/import_articles?brand_id=2021076"};
+</script>
+
+  <script src="//static.zdassets.com/hc/assets/hc_enduser-bcb949164e72721190c2ab2e12fb9f43.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+  var Tracker = {};
+
+  Tracker.track = function(eventName, data) {
+    var url = "https://help.instapage.com/hc/tracking/events?locale=en-us";
+
+    var payload = {
+      "event": eventName,
+      "data": data,
+      "referrer": document.referrer
+    };
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    xhr.send(JSON.stringify(payload));
+  };
+
+    Tracker.track("article_viewed", "BAh7CDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoPYXJ0aWNsZV9pZGwrCAOaxtFTADoKX21ldGF7CzoPYWNjb3VudF9pZGkDsT4DOhNoZWxwX2NlbnRlcl9pZGkEgybtCzoNYnJhbmRfaWRpA9TWHjoMdXNlcl9pZDA6DnVzZXJfcm9sZUkiDmFub255bW91cwY7BlQ7AEkiCmVuLXVzBjsGVA==--ad2a3a0a373ef5ba3b6cbc88e2372285affe9ba7");
+})();
+
+  </script>
+</body>
+</html>
